@@ -20,8 +20,7 @@ import kotlin.concurrent.fixedRateTimer
 
 class MainActivityViewModel(val repo: Repo) : ViewModel() {
 
-    var isFinishedLiveData = MediatorLiveData<Map<String, Boolean>>()
-    private var isFinished: MutableLiveData<Map<String, Boolean>> = MutableLiveData()
+
 
     var coronaLiveData = MediatorLiveData<List<Feature>>()
     private var coronaData: MutableLiveData<List<Feature>> = MutableLiveData()
@@ -84,12 +83,15 @@ class MainActivityViewModel(val repo: Repo) : ViewModel() {
             }
             result.await()
             confirmCase.postValue(repo.fetchAllBingCovidAreaByAreaParentId("world"))
-
-
+            repo.buildLocationData(this.coroutineContext)
         }
 
         viewModelScope.launch(Dispatchers.Main) {
             confirmedCaseLiveData.removeSource(confirmCase)
+            coronaLiveData.removeSource(repo.coronaLiveData)
+            coronaLiveData.addSource(repo.coronaLiveData) {
+                coronaLiveData.value = it
+            }
             confirmedCaseLiveData.addSource(confirmCase) {
                 confirmedCaseLiveData.value = it
             }

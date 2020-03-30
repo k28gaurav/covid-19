@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kgaurav/react-native/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml",
+            "outputFile": "/Users/kgaurav/Desktop/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-h480dp-land-v13/values-h480dp-land-v13.xml",
             "map": [
                 {
                     "source": "/Users/kgaurav/.gradle/caches/transforms-2/files-2.1/b0f94894e8002787a9f004b4134e183b/material-1.2.0-alpha05/res/values-h480dp-land-v13/values-h480dp-land-v13.xml",

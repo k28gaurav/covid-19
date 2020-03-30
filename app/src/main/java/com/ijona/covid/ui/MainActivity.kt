@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.e("activity", "Main")
 
-      //  initMap(savedInstanceState)
+        initMap(savedInstanceState)
         initObserver()
         initBottomSheet()
     }

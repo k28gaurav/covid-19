@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kgaurav/react-native/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/Users/kgaurav/Desktop/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "/Users/kgaurav/.gradle/caches/transforms-2/files-2.1/82bb1cc2114cdc1baa7f838650dfc222/jetified-work-runtime-1.0.1/res/values-v23/values-v23.xml",

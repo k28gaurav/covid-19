@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kgaurav/react-native/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "/Users/kgaurav/Desktop/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
                     "source": "/Users/kgaurav/.gradle/caches/transforms-2/files-2.1/61e20914109ec526091e4c10c9a26064/core-1.2.0/res/values-pt-rBR/values-pt-rBR.xml",

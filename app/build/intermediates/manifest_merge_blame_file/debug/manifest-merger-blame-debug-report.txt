@@ -6,19 +6,19 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="19"
-8-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml
+8-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml
 9        android:targetSdkVersion="29" />
-9-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml
+9-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-11-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:6:5-79
-11-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:6:22-76
+11-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:6:5-79
+11-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:6:22-76
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:7:5-67
-12-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:7:22-64
+12-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:7:5-67
+12-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:7:22-64
 13    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-13-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:8:5-79
-13-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:8:22-76
+13-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:8:5-79
+13-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:8:22-76
 14
 15    <uses-feature
 15-->[com.mapbox.mapboxsdk:mapbox-android-sdk:8.6.2] /Users/kgaurav/.gradle/caches/transforms-2/files-2.1/c461a4031d29cac73bb4178915aa34e3/jetified-mapbox-android-sdk-8.6.2/AndroidManifest.xml:9:5-11:35
@@ -47,45 +47,45 @@
 25-->[android.arch.work:work-runtime:1.0.1] /Users/kgaurav/.gradle/caches/transforms-2/files-2.1/82bb1cc2114cdc1baa7f838650dfc222/jetified-work-runtime-1.0.1/AndroidManifest.xml:25:22-78
 26
 27    <application
-27-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:10:5-32:19
+27-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:10:5-32:19
 28        android:name="com.ijona.covid.IJonaApp"
-28-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:11:9-33
+28-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:11:9-33
 29        android:allowBackup="false"
-29-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:12:9-36
+29-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:12:9-36
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 30-->[androidx.core:core:1.2.0] /Users/kgaurav/.gradle/caches/transforms-2/files-2.1/61e20914109ec526091e4c10c9a26064/core-1.2.0/AndroidManifest.xml:24:18-86
 31        android:debuggable="true"
-31-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:13:9-34
+31-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:13:9-34
 32        android:icon="@mipmap/ic_launcher"
-32-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:14:9-43
+32-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:14:9-43
 33        android:label="@string/app_name"
-33-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:15:9-41
+33-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:15:9-41
 34        android:roundIcon="@mipmap/ic_launcher_round"
-34-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:16:9-54
+34-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:16:9-54
 35        android:supportsRtl="true"
-35-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:17:9-35
+35-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:17:9-35
 36        android:testOnly="true"
 37        android:theme="@style/AppTheme"
-37-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:18:9-40
+37-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:18:9-40
 38        android:usesCleartextTraffic="true" >
-38-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:19:9-44
+38-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:19:9-44
 39        <activity
-39-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:22:9-31:20
+39-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:22:9-31:20
 40            android:name="com.ijona.covid.ui.MainActivity"
-40-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:23:13-44
+40-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:23:13-44
 41            android:label="@string/app_name"
-41-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:24:13-45
+41-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:24:13-45
 42            android:theme="@style/AppTheme.NoActionBar" >
-42-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:25:13-56
+42-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:25:13-56
 43            <intent-filter>
-43-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:26:13-30:29
+43-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:26:13-30:29
 44                <action android:name="android.intent.action.MAIN" />
-44-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:17-69
-44-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:25-66
+44-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:17-69
+44-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:25-66
 45
 46                <category android:name="android.intent.category.LAUNCHER" />
-46-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:29:17-77
-46-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:29:27-74
+46-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:29:17-77
+46-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:29:27-74
 47            </intent-filter>
 48        </activity>
 49        <activity
@@ -132,8 +132,8 @@
 71            <intent-filter>
 71-->[androidx.test:core:1.2.0] /Users/kgaurav/.gradle/caches/transforms-2/files-2.1/1b778127739b67df5b30f618c4f71151/core-1.2.0/AndroidManifest.xml:30:13-32:29
 72                <action android:name="android.intent.action.MAIN" />
-72-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:17-69
-72-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:25-66
+72-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:17-69
+72-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:25-66
 73            </intent-filter>
 74        </activity>
 75        <activity
@@ -145,8 +145,8 @@
 78            <intent-filter>
 78-->[androidx.test:core:1.2.0] /Users/kgaurav/.gradle/caches/transforms-2/files-2.1/1b778127739b67df5b30f618c4f71151/core-1.2.0/AndroidManifest.xml:30:13-32:29
 79                <action android:name="android.intent.action.MAIN" />
-79-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:17-69
-79-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:25-66
+79-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:17-69
+79-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:25-66
 80            </intent-filter>
 81        </activity>
 82        <activity
@@ -158,8 +158,8 @@
 85            <intent-filter>
 85-->[androidx.test:core:1.2.0] /Users/kgaurav/.gradle/caches/transforms-2/files-2.1/1b778127739b67df5b30f618c4f71151/core-1.2.0/AndroidManifest.xml:30:13-32:29
 86                <action android:name="android.intent.action.MAIN" />
-86-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:17-69
-86-->/Users/kgaurav/react-native/Covid19/app/src/main/AndroidManifest.xml:27:25-66
+86-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:17-69
+86-->/Users/kgaurav/Desktop/Covid19/app/src/main/AndroidManifest.xml:27:25-66
 87            </intent-filter>
 88        </activity>
 89

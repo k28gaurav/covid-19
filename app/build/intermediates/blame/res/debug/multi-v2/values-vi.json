@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kgaurav/react-native/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
+            "outputFile": "/Users/kgaurav/Desktop/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-vi/values-vi.xml",
             "map": [
                 {
                     "source": "/Users/kgaurav/.gradle/caches/transforms-2/files-2.1/dfcac82c8f52a5896fcf5800c764cf8f/preference-1.1.0/res/values-vi/values-vi.xml",

@@ -1,4 +1,4 @@
-# Referenced at /Users/kgaurav/react-native/Covid19/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:27
+# Referenced at /Users/kgaurav/Desktop/Covid19/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:27
 -keep class androidx.core.app.CoreComponentFactory { <init>(); }
-# Referenced at /Users/kgaurav/react-native/Covid19/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:27
+# Referenced at /Users/kgaurav/Desktop/Covid19/app/build/intermediates/merged_manifests/debug/AndroidManifest.xml:27
 -keep class com.ijona.covid.IJonaApp { <init>(); }

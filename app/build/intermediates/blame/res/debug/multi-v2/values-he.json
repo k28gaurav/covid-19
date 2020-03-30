@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kgaurav/react-native/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-he/values-he.xml",
+            "outputFile": "/Users/kgaurav/Desktop/Covid19/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-he/values-he.xml",
             "map": [
                 {
                     "source": "/Users/kgaurav/.gradle/caches/transforms-2/files-2.1/c461a4031d29cac73bb4178915aa34e3/jetified-mapbox-android-sdk-8.6.2/res/values-he/values-he.xml",
