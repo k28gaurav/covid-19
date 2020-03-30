@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    buildTypes {
+        release {
+            debuggable false
+            zipAlignEnabled true
+            minifyEnabled true
+            shrinkResources true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField "java.util.Date", "BUILD_TIME", "new java.util.Date(" + System.currentTimeMillis() + "L)"
+            buildConfigField "String", "MAPBOX_TOKEN", '"pk.eyJ1IjoibWFuZWVzaGpoYSIsImEiOiJjazhiOGN1OGMwMXpoM21ucnEwdXVuZmpmIn0.1D1CUU178_Xxh0nS94XhEQ"'
+        }
+        debug {
+            debuggable true
+            minifyEnabled false
+            //zipAlignEnabled true
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField "java.util.Date", "BUILD_TIME", "new java.util.Date(" + System.currentTimeMillis() + "L)"
+            buildConfigField "String", "MAPBOX_TOKEN", '"pk.eyJ1IjoibWFuZWVzaGpoYSIsImEiOiJjazhiOGN1OGMwMXpoM21ucnEwdXVuZmpmIn0.1D1CUU178_Xxh0nS94XhEQ"'
+        }
+    }
+}
