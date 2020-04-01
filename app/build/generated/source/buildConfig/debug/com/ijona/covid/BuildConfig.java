@@ -11,6 +11,6 @@ public final class BuildConfig {
   public static final int VERSION_CODE = 1;
   public static final String VERSION_NAME = "1.0";
   // Fields from build type: debug
-  public static final java.util.Date BUILD_TIME = new java.util.Date(1585596112491L);
+  public static final java.util.Date BUILD_TIME = new java.util.Date(1585690596169L);
   public static final String MAPBOX_TOKEN = "pk.eyJ1IjoibWFuZWVzaGpoYSIsImEiOiJjazhiOGN1OGMwMXpoM21ucnEwdXVuZmpmIn0.1D1CUU178_Xxh0nS94XhEQ";
 }

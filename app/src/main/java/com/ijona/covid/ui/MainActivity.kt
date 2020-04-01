@@ -1,5 +1,6 @@
 package com.ijona.covid.ui
 
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.os.PersistableBundle
@@ -8,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 
 import android.widget.LinearLayout
+import androidx.annotation.NonNull
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -25,6 +27,8 @@ import com.mapbox.mapboxsdk.maps.Style
 import com.mapbox.mapboxsdk.style.expressions.Expression
 import com.mapbox.mapboxsdk.style.layers.CircleLayer
 import com.mapbox.mapboxsdk.style.layers.PropertyFactory
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconAllowOverlap
+import com.mapbox.mapboxsdk.style.layers.PropertyFactory.iconOffset
 import com.mapbox.mapboxsdk.style.layers.SymbolLayer
 import com.mapbox.mapboxsdk.style.layers.TransitionOptions
 import com.mapbox.mapboxsdk.style.sources.GeoJsonOptions
@@ -46,7 +50,11 @@ class MainActivity : AppCompatActivity() {
 
     private var adapterS2: CovidAdapter? = null
 
+    private lateinit var style: Style.Builder
 
+    private val  SOURCE_ID = "SOURCE_ID"
+private val ICON_ID = "ICON_ID"
+private val  LAYER_ID = "LAYER_ID"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -126,7 +134,8 @@ class MainActivity : AppCompatActivity() {
                     }
                     BottomSheetBehavior.STATE_SETTLING -> {
                     }
-                    else -> {}
+                    else -> {
+                    }
                 }
             }
 
@@ -138,6 +147,10 @@ class MainActivity : AppCompatActivity() {
     private fun initObserver() {
         viewModel.confirmedCaseLiveData.observe(this, Observer { data ->
             adapterS2?.covidAreaList(data)
+        })
+
+        viewModel.coronaLiveData.observe(this, Observer { data ->
+            refreshMapData(data)
         })
 
     }
@@ -156,9 +169,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun addClusteredGeoJsonSource(loadedMapStyle: Style) { // Add a new source from the GeoJSON data and set the 'cluster' option to true.
 
-        viewModel.coronaLiveData.observe(this, Observer { data ->
-            refreshMapData(loadedMapStyle, data)
-        })
+
 
         // Use the coronaVirus GeoJSON source to create three layers: One layer for each cluster category.
         // Each point range gets a different fill color.
@@ -188,34 +199,48 @@ class MainActivity : AppCompatActivity() {
         loadedMapStyle.addLayer(count)
     }
 
-    fun refreshMapData(loadedMapStyle: Style, data: List<Feature>) {
+    fun refreshMapData(data: List<Feature>) {
 
-        btnRefresh.clearAnimation()
 
-        try {
+        style.withSource(GeoJsonSource(SOURCE_ID,
+            FeatureCollection.fromFeatures(data)))
+            .withLayer(SymbolLayer(LAYER_ID, SOURCE_ID)
+            .withProperties(PropertyFactory.iconImage(ICON_ID),
+                iconAllowOverlap(true),
+                iconOffset(Array<Float>(1){0.9f})))
+        
+        
+        mapboxMap?.setStyle(style) { style ->
 
-            val geoJsonSource =
-                loadedMapStyle.getSourceAs<GeoJsonSource>("coronaVirus")
-
-            if (geoJsonSource != null) {
-                geoJsonSource.setGeoJson(FeatureCollection.fromFeatures(data))
-
-            } else {
-                loadedMapStyle.addSource(
-                    GeoJsonSource(
-                        "coronaVirus",
-                        FeatureCollection.fromFeatures(data),
-                        GeoJsonOptions()
-                            .withCluster(true)
-                            .withClusterMaxZoom(100)
-                            .withClusterRadius(20)
-                    )
-                )
-            }
-
-        } catch (uriSyntaxException: URISyntaxException) {
-            Timber.e("Check the URL %s", uriSyntaxException.message)
         }
+        //  btnRefresh.clearAnimation()
+
+
+
+        /* try {
+
+             val geoJsonSource =
+                 loadedMapStyle.getSourceAs<GeoJsonSource>("coronaVirus")
+
+             if (geoJsonSource != null) {
+                 geoJsonSource.setGeoJson(FeatureCollection.fromFeatures(data))
+
+             } else {
+                 loadedMapStyle.addSource(
+                     GeoJsonSource(
+                         "coronaVirus",
+                         FeatureCollection.fromFeatures(data),
+                         GeoJsonOptions()
+                             .withCluster(true)
+                             .withClusterMaxZoom(100)
+                             .withClusterRadius(20)
+                     )
+                 )
+             }
+
+         } catch (uriSyntaxException: URISyntaxException) {
+             Timber.e("Check the URL %s", uriSyntaxException.message)
+         }*/
 
     }
 
@@ -224,27 +249,48 @@ class MainActivity : AppCompatActivity() {
         mapView.getMapAsync { map ->
             mapboxMap = map
             map.uiSettings.isCompassEnabled = false
-            map.setStyle(Style.LIGHT) { style ->
-                // Disable any type of fading transition when icons collide on the map. This enhances the visual
-                // look of the data clustering together and breaking apart.
-                style.transition = TransitionOptions(0, 0, false)
-                mapboxMap?.animateCamera(
-                    CameraUpdateFactory.newLatLngZoom(
-                        LatLng(
-                            39.913818,
-                            116.363625
-                        ), 1.0
+
+            style = Style.Builder().fromUri("mapbox://styles/mapbox/cjf4m44iw0uza2spb3q0a7s41")
+                .withImage(
+                    ICON_ID, BitmapFactory.decodeResource(
+                        resources, R.drawable.mapbox_marker_icon_default
                     )
                 )
-                addClusteredGeoJsonSource(style)
-                style.addImage(
-                    "cross-icon-id",
-                    BitmapUtils.getBitmapFromDrawable(resources.getDrawable(R.mipmap.ic_launcher))!!,
-                    true
+                .withTransition(TransitionOptions(0, 0, false))
+
+            map.setStyle(
+                style)
+
+            map.animateCamera(
+                CameraUpdateFactory.newLatLngZoom(
+                    LatLng(
+                        21.0000,
+                        78.0000
+                    ), 1.0
                 )
-            }
+            )
+
+
+// Add the SymbolLayer icon image to the map style
+            /*   map.setStyle(Style.LIGHT) { style ->
+                   // Disable any type of fading transition when icons collide on the map. This enhances the visual
+                   // look of the data clustering together and breaking apart.
+                   style.transition = TransitionOptions(0, 0, false)
+                   mapboxMap?.animateCamera(
+                       CameraUpdateFactory.newLatLngZoom(
+                           LatLng(
+                               39.913818,
+                               116.363625
+                           ), 1.0
+                       )
+                   )
+                   addClusteredGeoJsonSource(style)
+                   style.addImage(
+                       "cross-icon-id",
+                       BitmapUtils.getBitmapFromDrawable(resources.getDrawable(R.drawable.mapbox_marker_icon_default))!!,
+                       true
+                   )*/
         }
     }
-
 
 }

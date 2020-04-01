@@ -1,5 +1,6 @@
 package com.ijona.covid.data.repository
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.ijona.covid.data.database.dao.CoronaEntityDao
 import com.ijona.covid.data.database.model.Area
@@ -71,24 +72,27 @@ class Repo(private val apiService: ApiService, private val coronaEntityDao: Coro
 
     suspend fun buildLocationData(coroutineContext: CoroutineContext) {
         CoroutineScope(coroutineContext).launch {
-            val data = async {  fetchAllBingCovidAreaByAreaParentId("india") }
-           val result = data.await()
+            val data = async { fetchAllBingCovidAreaByAreaParentId("india") }
+            val result = data.await()
 
-               val latlist = async {  result.forEach {
-                   longLatList.add(
-                       Feature.fromGeometry(
-                           Point.fromLngLat(
-                               it.latitude ?: 39.913818, it.longitude
-                                   ?: 116.363625
-                           )
-                       )
-                   )
-               }
+            val latlist = async {
+                result.forEach { area ->
+                    if(area.latitude != null && area.longitude != null) {
+                        Log.e("LatLng", "Area:${area.displayName} lat:${area.latitude} -> long:${area.longitude}")
+                        longLatList.add(
+                            Feature.fromGeometry(
+                                Point.fromLngLat(
+                                    area.longitude, area.longitude!!
+                                )
+                            )
+                        )
+                    }
+                }
 
-                   coronaLiveData.postValue(longLatList)
+                coronaLiveData.postValue(longLatList)
             }
 
-             latlist.await()
+            latlist.await()
         }
 
 
